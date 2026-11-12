@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  background-color: var(--color-dark, #1f1f20);
+  color: var(--color-text-muted, #606d80);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 24px;
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  
+}
+
+p {
+  margin: 0;
+}

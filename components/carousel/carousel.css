@@ -1,0 +1,106 @@
+:host {
+  display: block;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: var(--color-dark, #1f1f20);
+}
+
+.carousel-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-track-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+}
+
+::slotted(*) {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(43, 76, 126, 0.7); /* color-primary with opacity */
+  color: var(--color-light, #dce0e6);
+  border: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  font-size: 1.5rem;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.carousel-button:hover {
+  background: var(--color-secondary, #567ebb);
+}
+
+.carousel-button.prev {
+  left: 20px;
+}
+
+.carousel-button.next {
+  right: 20px;
+}
+
+.carousel-nav {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.carousel-indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background: rgba(220, 224, 230, 0.5); /* color-light */
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-indicator.current-slide {
+  background: var(--color-light, #dce0e6);
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 300px;
+  }
+  
+  .carousel-button {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+  }
+}
